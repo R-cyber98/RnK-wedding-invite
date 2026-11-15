@@ -31,7 +31,7 @@ const EVENTS = [
     footnote: 'Bring your dancing shoes and celebrate the night with us!',
     date: 'Thursday, 10 December 2026', short: 'Thursday, 10 December',
     times: [['', '7:00 PM onwards']], place: 'Main Lawn',
-    dress: 'Glitz & Glamour', swatches: ['#c9a66b', '#b9bccb', '#1d1a24', '#7a1730'],
+    // dress: 'Glitz & Glamour', swatches: ['#c9a66b', '#b9bccb', '#1d1a24', '#7a1730'],
   },
   {
     slug: 'wedding', kind: 'wedding', theme: 'dark', name: 'The Wedding', day: 'Day two',
