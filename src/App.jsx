@@ -310,7 +310,7 @@ function Home() {
       <section className="band end">
         <div className="card" data-reveal="card">
           <p className="closing-text">Your presence and blessings will make our celebrations even more special.</p>
-          <p className="sign">With love,<span className="script">The Groom’s Family</span></p>
+          <p className="sign">With love,<span className="script">Both Families</span></p>
           <a className="btn" href={MAPS} target="_blank" rel="noreferrer">Open venue in Google Maps</a>
         </div>
       </section>
@@ -343,13 +343,10 @@ function EventPage({ e }) {
         {e.blurb && <div className="card" data-reveal="card"><p className="blurb">{e.blurb}</p></div>}
       </section>
 
+      {/* date & time already lead the page in the plaque; this card adds only where + what to wear */}
+      {(e.place || e.dress) && (
       <section className="band">
         <div className="card details" data-reveal="card">
-          <div className="detail">
-            <h2 className="small">When</h2>
-            <p className="d-main">{e.date}</p>
-            {e.times.map(([k, v]) => <p key={v}>{k && <em>{k} </em>}{v}</p>)}
-          </div>
           {e.place && (
             <div className="detail">
               <h2 className="small">Where</h2>
@@ -367,6 +364,7 @@ function EventPage({ e }) {
           )}
         </div>
       </section>
+      )}
 
       {e.footnote && (
         <section className="band">
@@ -384,7 +382,7 @@ function EventPage({ e }) {
         ) : (
           <div className="card" data-reveal="card">
             <p className="closing-text">Your presence and blessings will make our celebrations even more special.</p>
-            <p className="sign">With love,<span className="script">The Groom’s Family</span></p>
+            <p className="sign">With love,<span className="script">Both Families</span></p>
             <a className="btn" href="#/">Back to the invitation</a>
           </div>
         )}
