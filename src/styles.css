@@ -11,7 +11,7 @@
   --gold-hi: #e3c993;
   --gold-grad: linear-gradient(135deg, #8d6c37 0%, #e8d09a 28%, #b8955a 52%, #f1dcab 74%, #9a7841 100%);
   --rose: #b9837a;
-  --display: 'Bodoni Moda', 'Didot', serif;
+  --display: 'Cormorant Garamond', Garamond, serif; /* sturdy strokes: Bodoni's hairlines vanished at display sizes */
   --body: 'EB Garamond', Garamond, serif;
   --ui: 'Jost', 'Helvetica Neue', sans-serif;
   --script: 'Pinyon Script', cursive;
@@ -43,10 +43,9 @@ a { color: inherit; }
    Pin every Bodoni use to its sturdier text optical size; big titles also a touch heavier. */
 .names, .event-title, .gate-names, .card-title, .plaque-date, .d-main, .p-name, .next-name,
 .blurb, .closing-text, .footnote, .countdown b, .monogram, .seal, .arch-empty span {
-  font-optical-sizing: none;
-  font-variation-settings: 'opsz' 14;
+  font-weight: 600 !important;
 }
-.names, .event-title, .next-name { font-weight: 500 !important; letter-spacing: 0 !important; }
+.names, .event-title, .next-name { font-weight: 700 !important; letter-spacing: 0 !important; }
 
 /* ---------- reveal system (classes added by useReveal) ---------- */
 .mask { display: block; overflow: hidden; padding-bottom: 0.08em; }
@@ -150,7 +149,7 @@ a { color: inherit; }
   transition: opacity 0.9s var(--ease), transform 1.2s var(--ease);
 }
 .opening .gate-card { opacity: 0; transform: translateY(-16px) scale(0.98); }
-.om { font-size: 0.95rem; color: var(--gold); letter-spacing: 0.05em; }
+.om { font-size: 1rem; font-weight: 500; color: inherit; opacity: 0.9; letter-spacing: 0.05em; } /* follows page ink: readable on light and dark skies */
 .seal {
   width: 86px; height: 86px; margin: 1.3rem auto 1.1rem; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; font: italic 1.7rem/1 var(--display); color: var(--sindoor);
@@ -284,9 +283,9 @@ a { color: inherit; }
 .hint { margin-top: 1.4rem; font: 400 0.9rem/1.5 var(--ui); letter-spacing: 0.08em; opacity: 0.9; }
 
 .names { font: italic 400 clamp(3.8rem, min(12vw, 11vh), 8.4rem)/0.92 var(--display); display: flex; flex-direction: column; align-items: center; margin: 1.1rem 0 1.2rem; letter-spacing: -0.01em; }
-.names .amp { font-family: var(--body); font-style: italic; font-size: 0.6em; line-height: 1.05; color: var(--gold); }
+.names .amp { font-family: var(--body); font-style: italic; font-size: 0.6em; line-height: 1.05; color: color-mix(in srgb, currentColor 55%, var(--gold)); } /* gold tint of the page ink: shows on light and dark skies */
 .lede { font-style: italic; font-size: clamp(1.15rem, 2.6vw, 1.4rem); }
-.meta { margin-top: 0.8rem; font: 400 0.72rem/1.6 var(--ui); letter-spacing: 0.3em; text-transform: uppercase; }
+.meta { margin-top: 0.8rem; font: 500 0.82rem/1.6 var(--ui); letter-spacing: 0.24em; text-transform: uppercase; }
 
 .gallery { width: min(1000px, 100%); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 4vw, 40px); align-items: end; }
 .gallery .arch.tall { transform: translateY(-8%); }
